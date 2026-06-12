@@ -1,22 +1,21 @@
+````md
 # Sistema de Ponto
 
-Sistema simples em Python para registrar chegada e saida de funcionarios usando PostgreSQL.
+Projeto simples em Python para registrar entrada e saída de funcionários usando PostgreSQL.
 
 ## Requisitos
 
 - Python 3
 - PostgreSQL
-- Pacote `psycopg2`
+- psycopg2
 
-## Instalacao
-
-Instale a dependencia principal:
+## Instalação
 
 ```bash
 pip install psycopg2
-```
+````
 
-Se preferir usar ambiente virtual:
+Ou usando ambiente virtual:
 
 ```bash
 python -m venv .venv
@@ -24,11 +23,9 @@ python -m venv .venv
 pip install psycopg2
 ```
 
-## Configuracao do banco
+## Configuração
 
-Este projeto nao salva a senha do banco no codigo. Crie um arquivo `.env` local ou configure as variaveis de ambiente manualmente.
-
-Use o arquivo `.env.example` como modelo:
+Crie um arquivo `.env` na raiz do projeto usando o `.env.example` como base:
 
 ```env
 DB_HOST=localhost
@@ -38,24 +35,17 @@ DB_PASSWORD=sua_senha_real
 DB_PORT=5432
 ```
 
-O arquivo `.env` esta no `.gitignore`, entao ele nao deve ser enviado para o Git.
+O arquivo `.env` não deve ser enviado para o GitHub, pois contém dados sensíveis.
 
-No PowerShell, voce tambem pode configurar a senha assim antes de executar:
+Também dá para configurar a senha pelo PowerShell:
 
 ```powershell
 $env:DB_PASSWORD="sua_senha_real"
 ```
 
-As outras variaveis possuem valores padrao:
+## Banco de dados
 
-- `DB_HOST`: `localhost`
-- `DB_NAME`: `sistema_ponto`
-- `DB_USER`: `postgres`
-- `DB_PORT`: `5432`
-
-## Tabelas esperadas
-
-O sistema espera as tabelas abaixo no PostgreSQL:
+Crie as tabelas abaixo no PostgreSQL:
 
 ```sql
 CREATE TABLE funcionarios (
@@ -73,16 +63,19 @@ CREATE TABLE registros_ponto (
 );
 ```
 
-## Como executar
+## Como rodar
 
-Configure `DB_PASSWORD` e execute:
+Depois de configurar o banco, execute:
 
 ```bash
 python main.py
 ```
 
-## Cuidados com credenciais
+## Observações
 
-- Nunca coloque senha real em arquivos `.py`.
-- Nunca versione o arquivo `.env`.
-- Se uma senha ja foi enviada para um repositorio remoto, troque essa senha no PostgreSQL.
+* Não coloque senha direto no código.
+* Não envie o arquivo `.env` para o repositório.
+* Se uma senha real já foi enviada, troque ela no PostgreSQL.
+
+```
+```
