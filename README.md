@@ -1,4 +1,10 @@
 ````md
+
+## Contribuintes 
+
+- Arthur Brito 
+-Luiz Henrique
+
 # Sistema de Ponto
 
 Projeto simples em Python para registrar entrada e saída de funcionários usando PostgreSQL.
